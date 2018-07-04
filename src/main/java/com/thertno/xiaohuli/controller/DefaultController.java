@@ -26,6 +26,7 @@ public class DefaultController {
     public Object giftProduct(@NotBlank(message = "用户名不能为空") String usr,
             @NotBlank(message = "密码不能为空") String passwd) {
         if (!usr.equals(passwd)) {
+            //throw new ServiceException("账户密码错误");
             throw new ServiceException("账户密码错误");
         }
         return new ResponseResult("登录成功").success();
